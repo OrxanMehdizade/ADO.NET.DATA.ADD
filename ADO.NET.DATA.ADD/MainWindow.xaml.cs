@@ -17,8 +17,8 @@ namespace ADO.NET.DATA.ADD
 
         private void GetDataFromDatabase()
         {
-            string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Humans;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            string query = "SELECT FirstName, LastName FROM Human";
+            string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Library;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string query = "SELECT FirstName, LastName FROM Authors";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 SqlCommand command = new SqlCommand(query, connection);
@@ -46,8 +46,8 @@ namespace ADO.NET.DATA.ADD
         }
         private void AddDataToDatabase(string name, string surname)
         {
-            string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Humans;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
-            string query = "INSERT INTO Human (FirstName, LastName) VALUES (@Name, @Surname)";
+            string connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Library;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
+            string query = "INSERT INTO Authors (FirstName, LastName) VALUES (@Name, @Surname)";
 
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
